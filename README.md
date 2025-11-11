@@ -94,9 +94,9 @@ ansible-playbook -i inventory.ini site.yml --ask-become-pass
 - call this Ansible playbook from your CI (GitHub Actions) after Terraform 
 
 ## Quick Checklist
- Terraform VM is reachable by SSH  
- inventory.ini has correct IP, user, key  
- ansible-playbook -i inventory.ini site.yml runs without errors  
- Browser shows your HTML  
+[ ] Terraform VM 0is reachable by SSH  
+[ ] inventory.ini has correct IP, user, key  
+[ ] ansible-playbook -i inventory.ini site.yml runs without errors  
+[ ] Browser shows your HTML  
 
 
