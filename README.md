@@ -39,11 +39,11 @@ ansible/
 ```
 ## Files
 
-inventory.ini - Host, User, Path to private SSH key.
+- inventory.ini - Host, User, Path to private SSH key.
 More servers can be added to [nginx_servers]
-site.yml - entry point playbook 
-roles/nginx/tasks/main.yml - machine configuration (idempotent)
-roles/nginx/templates/index.html.j2 - Jinja2 template for the HTML that will be served
+- site.yml - entry point playbook 
+- roles/nginx/tasks/main.yml - machine configuration (idempotent)
+- roles/nginx/templates/index.html.j2 - Jinja2 template for the HTML that will be served
 
 ## How to run
 ```
