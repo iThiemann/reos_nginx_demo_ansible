@@ -66,8 +66,8 @@ Permission denied (publickey)
 - check username (azureuser vs ubuntu)  
 
 Ubuntu asks for become password  
- - We used passwordless sudo in Terraform images (default Ubuntu cloud images usually allow it for the created user).  
- - If your image doesn’t, add this to inventory.ini 
+- We used passwordless sudo in Terraform images (default Ubuntu cloud images usually allow it for the created user).  
+- If your image doesn’t, add this to inventory.ini 
 ```
 ansible_become_password=YOURPASSWORD
 ```
