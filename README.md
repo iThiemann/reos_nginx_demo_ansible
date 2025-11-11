@@ -74,6 +74,11 @@ We used passwordless sudo in Terraform images (default Ubuntu cloud images usual
 ```
 ansible_become_password=YOURPASSWORD
 ```
+Use: 
+```
+export YOURPASSWOR=typeyourpasswordhere
+```
+NEVER USE CLEARTYPE PASSWORDS IN REPOSITORIES!!!
 or
 ```
 ansible-playbook -i inventory.ini site.yml --ask-become-pass
