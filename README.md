@@ -50,7 +50,8 @@ roles/nginx/tasks/main.yml - machine configuration (idempotent)
 roles/nginx/templates/index.html.j2 - Jinja2 template for the HTML that will be served
 
 ## How to run
-```ansible-playbook -i inventory.ini site.yml
+```
+ansible-playbook -i inventory.ini site.yml
 ```
 Ansible Steps:  
 Ansible reads inventory.ini, finds azure-nginx and its SSH info  
@@ -70,10 +71,12 @@ check username (azureuser vs ubuntu)
 
 Ubuntu asks for become password  
 We used passwordless sudo in Terraform images (default Ubuntu cloud images usually allow it for the created user). If your image doesn’t, add this to inventory.ini 
-```ansible_become_password=YOURPASSWORD
+```
+ansible_become_password=YOURPASSWORD
 ```
 or
-```ansible-playbook -i inventory.ini site.yml --ask-become-pass
+```
+ansible-playbook -i inventory.ini site.yml --ask-become-pass
 ```
 
 ## Roles 
