@@ -21,7 +21,8 @@ Terraform VM is up
 You should already have run
 ```
 terraform apply
-``` and have the VM’s public IP.
+```
+and have the VM’s public IP.
 You can SSH into the VM manually
 ```
 ssh azureuser@<PUBLIC_IP> -i ~/.ssh/id_rsa
