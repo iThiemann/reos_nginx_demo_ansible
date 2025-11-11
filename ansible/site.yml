@@ -1,0 +1,7 @@
+---
+- name: Configure Azure nginx server
+  hosts: nginx_servers
+  become: yes
+  roles:
+    - nginx
+
