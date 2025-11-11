@@ -78,8 +78,8 @@ Use:
 ```
 export YOURPASSWOR=typeyourpasswordhere
 ```
-NEVER USE CLEARTYPE PASSWORDS IN REPOSITORIES!!!
-or
+NEVER USE CLEARTYPE PASSWORDS IN REPOSITORIES!!!  
+or  
 ```
 ansible-playbook -i inventory.ini site.yml --ask-become-pass
 ```
@@ -95,5 +95,11 @@ add group_vars/nginx_servers.yml to set variables per group
 add TLS tasks to the role  
 add a handler to restart nginx only when template changes  
 call this Ansible playbook from your CI (GitHub Actions) after Terraform 
+
+## Quick Checklist
+ Terraform VM is reachable by SSH  
+ inventory.ini has correct IP, user, key  
+ ansible-playbook -i inventory.ini site.yml runs without errors  
+ Browser shows your HTML  
 
 
