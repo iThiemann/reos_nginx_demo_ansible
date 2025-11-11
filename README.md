@@ -1,6 +1,6 @@
 # Ansible: Configure Azure NGINX Server
 
-This README explains how to run the Ansible playbook **using the proper role structure** that we outlined:
+This README explains how to run the Ansible playbook using the role structure that we outlined:
 
 ```
 ansible/
@@ -13,7 +13,7 @@ ansible/
         └── templates
             └── index.html.j2
 ```
-The goal: take the VM that Terraform created (Ubuntu, reachable via SSH) and configure it so that NGINX is installed, enabled, and serving a custom “hello” page.
+With Terraform created VM f.e. (Ubuntu, reachable via SSH) and configure it so that NGINX is installed, enabled, and serving a custom “hello” page.
 
 ## Prerequisites
 
@@ -21,14 +21,20 @@ Terraform VM is up
 You should already have run terraform apply and have the VM’s public IP.
 
 You can SSH into the VM manually
+```
 ssh azureuser@<PUBLIC_IP> -i ~/.ssh/id_rsa
+```
 azureuser must match what you used in Terraform.
 use the right key file.
 
 Check if Ansible is installed on your local machine
+```
 ansible --version
-Hint: pip install ansible
-
+```
+Hint:
+```
+pip install ansible
+```
 ## Directory Structure
 ```
 ansible/
