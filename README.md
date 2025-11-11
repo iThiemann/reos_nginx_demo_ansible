@@ -1,6 +1,6 @@
 # Ansible: Configure Azure NGINX Server
 
-This README explains how to run the Ansible playbook using the role structure that we outlined:
+This README explains how to run the Ansible playbook using the role structure.  
 Terraform created VM f.e. (Ubuntu, reachable via SSH) to configure it with Ansible so that NGINX is installed, enabled, and serving a custom “hello” page.
 
 ## Prerequisites
