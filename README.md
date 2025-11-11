@@ -60,14 +60,14 @@ Check in Browser:
 http://(use your VM IP) 
 
 ## Common Issues
-<u>Permission denied (publickey)</u>  
+Permission denied (publickey)  
 - check ansible_ssh_private_key_file path  
 - check file permissions (chmod 600 ~/.ssh/id_rsa)  
 - check username (azureuser vs ubuntu)  
 
-<u>Ubuntu asks for become password</u>  
-We used passwordless sudo in Terraform images (default Ubuntu cloud images usually allow it for the created user).  
-If your image doesn’t, add this to inventory.ini 
+Ubuntu asks for become password  
+ - We used passwordless sudo in Terraform images (default Ubuntu cloud images usually allow it for the created user).  
+ - If your image doesn’t, add this to inventory.ini 
 ```
 ansible_become_password=YOURPASSWORD
 ```
@@ -82,16 +82,16 @@ ansible-playbook -i inventory.ini site.yml --ask-become-pass
 ```
 
 ## Roles 
-cleaner playbooks: site.yml stays tiny  
-reusable: you can use the same nginx role for future VMs  
-extensible: add defaults/ and vars/ later for tuning  
-standard Ansible layout: other people know where to look 
+- cleaner playbooks: site.yml stays tiny  
+- reusable: you can use the same nginx role for future VMs  
+- extensible: add defaults/ and vars/ later for tuning  
+- standard Ansible layout: other people know where to look 
 
 ## Optional Steps
-add group_vars/nginx_servers.yml to set variables per group  
-add TLS tasks to the role  
-add a handler to restart nginx only when template changes  
-call this Ansible playbook from your CI (GitHub Actions) after Terraform 
+- add group_vars/nginx_servers.yml to set variables per group  
+- add TLS tasks to the role  
+- add a handler to restart nginx only when template changes  
+- call this Ansible playbook from your CI (GitHub Actions) after Terraform 
 
 ## Quick Checklist
  Terraform VM is reachable by SSH  
