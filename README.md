@@ -50,23 +50,24 @@ roles/nginx/templates/index.html.j2 - Jinja2 template for the HTML that will be 
 ansible-playbook -i inventory.ini site.yml
 ```
 Ansible Steps:  
-Ansible reads inventory.ini, finds azure-nginx and its SSH info  
-connects over SSH  
-runs the site.yml play  
-site.yml calls the nginx role  
-the role installs nginx, drops the file, starts the service 
+- Ansible reads inventory.ini, finds azure-nginx and its SSH info  
+- connects over SSH  
+- runs the site.yml play  
+- site.yml calls the nginx role  
+- the role installs nginx, drops the file, starts the service 
 
 Check in Browser:  
 http://(use your VM IP) 
 
 ## Common Issues
 <u>Permission denied (publickey)</u>  
-check ansible_ssh_private_key_file path  
-check file permissions (chmod 600 ~/.ssh/id_rsa)  
-check username (azureuser vs ubuntu)  
+- check ansible_ssh_private_key_file path  
+- check file permissions (chmod 600 ~/.ssh/id_rsa)  
+- check username (azureuser vs ubuntu)  
 
 <u>Ubuntu asks for become password</u>  
-We used passwordless sudo in Terraform images (default Ubuntu cloud images usually allow it for the created user). If your image doesn’t, add this to inventory.ini 
+We used passwordless sudo in Terraform images (default Ubuntu cloud images usually allow it for the created user).  
+If your image doesn’t, add this to inventory.ini 
 ```
 ansible_become_password=YOURPASSWORD
 ```
