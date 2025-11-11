@@ -64,12 +64,12 @@ Check in Browser:
 http://(use your VM IP) 
 
 ## Common Issues
-Permission denied (publickey)  
+<u>Permission denied (publickey)</u>  
 check ansible_ssh_private_key_file path  
 check file permissions (chmod 600 ~/.ssh/id_rsa)  
 check username (azureuser vs ubuntu)  
 
-Ubuntu asks for become password  
+<u>Ubuntu asks for become password</u>  
 We used passwordless sudo in Terraform images (default Ubuntu cloud images usually allow it for the created user). If your image doesn’t, add this to inventory.ini 
 ```
 ansible_become_password=YOURPASSWORD
