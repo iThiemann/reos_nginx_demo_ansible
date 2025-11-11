@@ -13,20 +13,21 @@ ansible/
         └── templates
             └── index.html.j2
 ```
-With Terraform created VM f.e. (Ubuntu, reachable via SSH) and configure it so that NGINX is installed, enabled, and serving a custom “hello” page.
+Terraform created VM f.e. (Ubuntu, reachable via SSH) to configure it with Ansible so that NGINX is installed, enabled, and serving a custom “hello” page.
 
 ## Prerequisites
 
 Terraform VM is up
-You should already have run terraform apply and have the VM’s public IP.
-
+You should already have run
+```
+terraform apply
+``` and have the VM’s public IP.
 You can SSH into the VM manually
 ```
 ssh azureuser@<PUBLIC_IP> -i ~/.ssh/id_rsa
 ```
 azureuser must match what you used in Terraform.
 use the right key file.
-
 Check if Ansible is installed on your local machine
 ```
 ansible --version
